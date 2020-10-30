@@ -29806,9 +29806,7 @@ function App() {
     console.log("Random the quotes");
     const randomNum = Math.floor(Math.random() * data.length);
     const randomQuote = data[randomNum];
-    setQuotes({
-      data: randomQuote
-    });
+    setQuotes(randomQuote.quote);
   }
 
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, quotes.quoteText), /*#__PURE__*/_react.default.createElement("button", {

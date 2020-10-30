@@ -22,7 +22,7 @@ function App() {
     console.log("Random the quotes");
     const randomNum = Math.floor(Math.random() * data.length);
     const randomQuote = data[randomNum];
-    setQuotes({data: randomQuote})
+    setQuotes(randomQuote.quote)
   }
   
   return (
