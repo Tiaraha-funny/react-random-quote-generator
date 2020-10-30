@@ -1,0 +1,59 @@
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.random {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.author {
+    background-color: #000000;
+    padding: 20px;
+    color: #ffffff;
+    border: red 1px solid;
+    outline: red;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    background-color: lightskyblue;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.content {
+    padding: 20px;
+    background-color: lightpink;
+}
+
+small {
+    font-size: 13px;
+    color: gainsboro;
+}
+
+/*# sourceMappingURL=/react-random-quote-generator.e31bb0bc.css.map */

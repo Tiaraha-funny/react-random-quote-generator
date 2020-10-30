@@ -1,34 +1,22 @@
-import React, { useEffect, useState } from "react";
-
-const QUOTE = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./index.css";
+import QuoteDetails from "./QuoteDetails";
+import RandomQuotes from "./RandomQuotes";
 
 function App() {
-  
-  const [quotes, setQuotes] = useState([]);
-  const [author, setAuthor] = useState("");
-
-  useEffect(() => {
-    async function fetchQuotes() {
-      const res = await fetch(QUOTE);
-      const data = await res.json();
-      console.log(data);
-      setQuotes(data.quote);
-    }
-  
-    fetchQuotes();
-  }, []);
-
-  function handleRandom() {
-    console.log("Random the quotes");
-    const randomNum = Math.floor(Math.random() * data.length);
-    const randomQuote = data[randomNum];
-    setQuotes(randomQuote.quote)
-  }
-  
   return (
-    <div>
-      <h2>{quotes.quoteText}</h2>
-      <button onClick={handleRandom}>{quotes.quoteAuthor}</button>
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route path="/authors/:id">
+            <QuoteDetails />
+          </Route>
+          <Route path="/">
+            <RandomQuotes />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
