@@ -40,7 +40,7 @@ function RandomQuotes() {
                 <br />
                 <small>{quotes.quoteGenre}</small>
               </p>
-              <img src={arrow} />
+              <img className="arrow" src={arrow} />
             </button>
           </Link>
         </div>

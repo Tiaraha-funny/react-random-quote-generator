@@ -34039,6 +34039,7 @@ function RandomQuotes() {
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "author"
   }, /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteAuthor, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("small", null, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("img", {
+    className: "arrow",
     src: _arrow.default
   }))))));
 }
@@ -34117,7 +34118,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60427" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64618" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
