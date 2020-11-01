@@ -55,7 +55,7 @@ $ npm start
 
 ## Contact
 
--   Website [your-website.com](https://quotes-randomely.netlify.app/)
+-   Website: [this-website-netlify-deplicating](https://quotes-randomely.netlify.app/)
 
 -   GitHub [@Peta Jeannie](https://github.com/tiaraha-funny/)
 
