@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/authors/:id">
+          <Route path="/authors/:authorName">
             <QuoteDetails />
           </Route>
           <Route path="/">

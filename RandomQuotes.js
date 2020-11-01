@@ -33,7 +33,7 @@ function RandomQuotes() {
       <div className="content">
         <h2>{quotes.quoteText}</h2>
         <div>
-          <Link to={`/authors/:${quotes.quoteAuthor}`}>
+          <Link to={`/authors/${quotes.quoteAuthor}`}>
             <button className="author">
               <p>
                 {quotes.quoteAuthor}

@@ -32,7 +32,9 @@ h2 {
     font-size: 20px;
     cursor: pointer;
 }
-
+ul {
+  list-style: none;  
+}
 a {
     text-decoration: none;
 }
@@ -54,6 +56,28 @@ a {
 small {
     font-size: 13px;
     color: gainsboro;
+}
+
+.main-quote {
+    background-color: gold;
+    margin: auto;
+    width: 60%;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+ul {
+    background-color: khaki;
+    border: 5px solid lightgoldenrodyellow;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.name {
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 3px 3px 3px lightyellow;
+    text-transform: uppercase;
 }
 
 /*# sourceMappingURL=/react-random-quote-generator.e31bb0bc.css.map */

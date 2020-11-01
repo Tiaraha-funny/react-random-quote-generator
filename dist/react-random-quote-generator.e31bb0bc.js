@@ -33937,22 +33937,25 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
+require("./index.css");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const ALL_QUOTES = "https://quote-garden.herokuapp.com/api/v2/authors/";
-const author = "?page=1&limit=10"; // const ALL_QUOTES = "https://quote-garden.herokuapp.com/api/v2/authors/:authorName?page=1&limit=10";
+const AUTHOR = "?page=1&limit=10";
 
 function QuoteDetails() {
   const [quotation, setQuotation] = (0, _react.useState)([]);
   const {
-    id
+    authorName
   } = (0, _reactRouterDom.useParams)();
-  console.log(id);
+  console.log(authorName);
 
   const fetchMoreQuotes = async () => {
-    const res = await fetch(ALL_QUOTES + id + author);
+    const res = await fetch(ALL_QUOTES + authorName + AUTHOR);
+    console.log(res);
     const result = await res.json();
     console.log(result.quotes);
     setQuotation(result.quotes);
@@ -33961,18 +33964,20 @@ function QuoteDetails() {
   (0, _react.useEffect)(() => {
     fetchMoreQuotes();
   }, []);
-  if (!quotation.quoteText) return null;
-  return /*#__PURE__*/_react.default.createElement("h1", null, quotation.map(quote => {
-    /*#__PURE__*/
-    _react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
-      key: quote.id
-    }, quote.quoteText), /*#__PURE__*/_react.default.createElement("li", null, "Hello world"));
-  }));
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "main-quote"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "name"
+  }, authorName), /*#__PURE__*/_react.default.createElement("h3", null, quotation.map(quote => {
+    return /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
+      key: quote.authorName
+    }, "\"", quote.quoteText, "\""));
+  })));
 }
 
 var _default = QuoteDetails;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"random.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./index.css":"index.css"}],"random.svg":[function(require,module,exports) {
 module.exports = "/random.c62635a7.svg";
 },{}],"arrow.svg":[function(require,module,exports) {
 module.exports = "/arrow.78cf50ab.svg";
@@ -34028,7 +34033,7 @@ function RandomQuotes() {
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "content"
   }, /*#__PURE__*/_react.default.createElement("h2", null, quotes.quoteText), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: `/authors/:${quotes.quoteAuthor}`
+    to: `/authors/${quotes.quoteAuthor}`
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "author"
   }, /*#__PURE__*/_react.default.createElement("p", null, quotes.quoteAuthor, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("small", null, quotes.quoteGenre)), /*#__PURE__*/_react.default.createElement("img", {
@@ -34062,7 +34067,7 @@ function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "app"
   }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/authors/:id"
+    path: "/authors/:authorName"
   }, /*#__PURE__*/_react.default.createElement(_QuoteDetails.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_RandomQuotes.default, null)))));

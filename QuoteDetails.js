@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./index.css";
 
 const ALL_QUOTES = "https://quote-garden.herokuapp.com/api/v2/authors/";
-const author = "?page=1&limit=10";
-
-// const ALL_QUOTES = "https://quote-garden.herokuapp.com/api/v2/authors/:authorName?page=1&limit=10";
+const AUTHOR = "?page=1&limit=10";
 
 function QuoteDetails() {
   const [quotation, setQuotation] = useState([]);
-  const { id } = useParams();
-  console.log(id);
+  const { authorName } = useParams();
+  console.log(authorName);
 
   const fetchMoreQuotes = async () => {
-    const res = await fetch(ALL_QUOTES + id + author );
+    const res = await fetch(ALL_QUOTES + authorName + AUTHOR);
+    console.log(res);
     const result = await res.json();
     console.log(result.quotes);
     setQuotation(result.quotes);
@@ -22,19 +22,19 @@ function QuoteDetails() {
     fetchMoreQuotes();
   }, []);
 
-  if (!quotation.quoteText) return null;
-
   return (
-    <h1>
+    <div className="main-quote">
+      <h2 className="name">{authorName}</h2>
+    <h3>
       {quotation.map((quote) => {
-        <ul>
-          <li key={quote.id}>
-            {quote.quoteText}
-          </li>
-          <li>Hello world</li>
-        </ul>
+        return (
+          <ul>
+            <li key={quote.authorName}>"{quote.quoteText}"</li>
+          </ul>
+        );
       })}
-    </h1>
+    </h3>
+    </div>
   );
 }
 
