@@ -55,7 +55,8 @@ $ npm start
 
 ## Contact
 
--   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@Peta Jeannie](https://{github.com/tiaraha-funny/})
+-   Website [your-website.com](https://quotes-randomely.netlify.app/)
+
+-   GitHub [@Peta Jeannie](https://github.com/tiaraha-funny/)
 
 -   Email: mailto:peta.jea@onja.org
