@@ -28,7 +28,7 @@ function QuoteDetails() {
     <h3>
       {quotation.map((quote) => {
         return (
-          <ul>
+          <ul key={quote.authorName}>
             <li key={quote.authorName}>"{quote.quoteText}"</li>
           </ul>
         );

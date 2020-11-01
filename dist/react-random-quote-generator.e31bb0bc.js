@@ -33969,7 +33969,9 @@ function QuoteDetails() {
   }, /*#__PURE__*/_react.default.createElement("h2", {
     className: "name"
   }, authorName), /*#__PURE__*/_react.default.createElement("h3", null, quotation.map(quote => {
-    return /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
+    return /*#__PURE__*/_react.default.createElement("ul", {
+      key: quote.authorName
+    }, /*#__PURE__*/_react.default.createElement("li", {
       key: quote.authorName
     }, "\"", quote.quoteText, "\""));
   })));
@@ -34115,7 +34117,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51821" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60427" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
